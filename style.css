@@ -275,6 +275,10 @@ body {
     margin: 11px 0;
 }
 
+.card h3:hover {
+    text-decoration: underline;
+}
+
 .card-sale p {
     font-size: 20rem;
     line-height: 25rem;
@@ -682,7 +686,7 @@ aside {
     .footer-menu .wrapper>div {
         display: flex;
         flex-direction: unset;
-        justify-content: space-around;
+        justify-content: space-between;
         width: 48%;
     }
 }
