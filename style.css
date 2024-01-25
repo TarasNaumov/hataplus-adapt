@@ -455,6 +455,11 @@ aside {
     .contact-info>div {
         margin: auto;
     }
+
+    .map-and-form {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media screen and (min-width: 400px) {
@@ -545,8 +550,8 @@ aside {
 
     .map-and-form {
         display: flex;
-        justify-content: space-between;
-        align-content: stretch;
+        flex-direction: row;
+        align-items: stretch;
     }
 
     .wrapper.map-and-form .map {
@@ -857,10 +862,10 @@ form {
     font-family: "Roboto Slab";
 }
 
-.form-and-map {
+.map-and-form {
     display: flex;
-    flex-direction: column;
-    align-items: stretch;
+    justify-content: space-between;
+    align-content: stretch;
 }
 
 .header-form {
