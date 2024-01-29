@@ -15,8 +15,10 @@ body {
 }
 
 .header-line {
-    padding: 10px 0;
+    padding: 15px 0;
     background-color: #1f1f56;
+    display: flex;
+    align-items: center;
 }
 
 .menu {
@@ -49,6 +51,7 @@ body {
 
 .soc {
     display: flex;
+    align-items: center;
     column-gap: 26px;
 }
 
@@ -90,17 +93,16 @@ body {
 .header-title .wrapper,
 .footer-menu .wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    gap: 20px;
     padding: 30px 0;
 }
 
-.header-title .wrapper>div {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    row-gap: 25px;
+.header-title .wrapper div,
+.footer-menu .wrapper div {
+    width: fit-content;
 }
 
 .tell a {
@@ -112,6 +114,7 @@ body {
     font-weight: bold;
     font-family: "Arial";
     position: relative;
+    width: fit-content;
 }
 
 .tell a:first-child:before {
@@ -134,11 +137,12 @@ body {
 
 .mail a {
     font-size: 16rem;
-    line-height: 24rem;
     color: #25252c;
     font-family: "Arial";
     padding-left: 30px;
     position: relative;
+    width: fit-content;
+    margin-bottom: 12px;
 }
 
 .mail a:first-child {
@@ -214,6 +218,7 @@ body {
     font-size: 14rem;
     line-height: 24rem;
     color: #fff;
+    font-family: "Arial";
     margin-bottom: 17px;
 }
 
@@ -221,6 +226,7 @@ body {
     font-size: 40rem;
     color: #fd8300;
     font-weight: bold;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .prise span {
@@ -262,6 +268,7 @@ body {
 
 .card img {
     width: 100%;
+    margin-bottom: 10px;
 }
 
 .card {
@@ -269,10 +276,16 @@ body {
 }
 
 .card h3 {
-    font-size: 25rem;
-    line-height: 25rem;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: bold;
+    font-family: "Arial";
     color: #1f1f56;
-    margin: 11px 0;
+    margin-bottom: 9px;
+}
+
+.card sup {
+    font-size: 11px;
 }
 
 .card h3:hover {
@@ -280,8 +293,7 @@ body {
 }
 
 .card-sale p {
-    font-size: 20rem;
-    line-height: 25rem;
+    font-size: 13rem;
     color: #9999a6;
 }
 
@@ -289,6 +301,7 @@ aside {
     border-radius: 3px 3px 0 0;
     overflow: hidden;
     width: 100%;
+    margin: auto;
 }
 
 aside li {
@@ -305,10 +318,15 @@ aside li:last-child {
 
 aside li ul {
     display: none;
+    transition: 0.3s;
 }
 
 aside ul li ul li a {
     margin-left: 30px;
+    font-size: 14px;
+    line-height: 24px;
+    color: #666;
+    font-family: "Arial";
 }
 
 aside li:hover ul {
@@ -327,6 +345,17 @@ aside>ul>li>a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+aside>ul>li>a span {
+    font-size: 14px;
+    line-height: 24px;
+    color: #25252c;
+    font-family: "Arial";
+}
+
+aside>ul>li:hover>a span {
+    color: #fff;
 }
 
 .arrow {
@@ -407,6 +436,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
     row-gap: 50px;
 }
 
@@ -432,6 +462,13 @@ footer>div:last-child {
     font-size: 14rem;
     line-height: 26rem;
     color: #666666;
+    font-family: "Arial";
+}
+
+p.bottom-footer {
+    font-size: 13px;
+    line-height: 18px;
+    color: #9999a6;
     font-family: "Arial";
 }
 
@@ -476,10 +513,6 @@ aside {
         justify-content: space-around;
     }
 
-    .card h3 {
-        font-size: 20rem;
-    }
-
     .card-sale p {
         font-size: 15rem;
     }
@@ -501,6 +534,10 @@ aside {
 }
 
 @media screen and (min-width: 450px) {
+    .header-title .wrapper {
+        flex-wrap: wrap;
+    }
+
     .card-sale p {
         font-size: 15rem;
     }
@@ -529,6 +566,20 @@ aside {
 }
 
 @media screen and (min-width: 600px) {
+    
+    .header-title .wrapper>div,
+    .footer-menu .wrapper>div,
+    .footer-menu .wrapper>ul {
+        width: 45%;
+    }
+
+    .header-title .wrapper .tell,
+    .header-title .wrapper>div:last-child,
+    .footer-menu .wrapper>ul:nth-child(2),
+    .footer-menu .wrapper .mail {
+        width: fit-content;
+    }
+
     .footer-menu ul {
         text-align: unset;
     }
@@ -537,11 +588,7 @@ aside {
     .footer-menu .wrapper {
         flex-direction: unset;
         align-items: flex-start;
-        justify-content: space-around;
-    }
-
-    .card h3 {
-        font-size: 20rem;
+        justify-content: space-between;
     }
 
     .card-sale p {
@@ -593,29 +640,27 @@ aside {
     }
 
     .card-sale a {
-        width: 50%;
+        width: 45%;
     }
 
     .card-sale .card img {
         width: 100%;
     }
 
-    .card h3 {
-        font-size: 18rem;
-    }
-
     .card-sale p {
         font-size: 13rem;
+    }
+
+    .card-sale-price {
+        justify-content: space-evenly;
+        flex-wrap: wrap;
     }
 }
 
 @media screen and (min-width: 700px) {
-    .main-info {
-        width: 58%;
-    }
 
     aside {
-        width: 40%;
+        width: 60%;
     }
 
     .contact-info>div {
@@ -625,17 +670,18 @@ aside {
 }
 
 @media screen and (min-width: 768px) {
+    .card-sale-price>a {
+        width: 40%;
+    }
+
+    .header-title .wrapper,
+    .footer-menu .wrapper {
+        justify-content: space-evenly;
+    }
+
     .flex .wrapper {
         flex-direction: row;
         justify-content: space-between;
-    }
-
-    .main-info {
-        width: 68%;
-    }
-
-    aside {
-        width: 30%;
     }
 
     .burger-menu {
@@ -664,13 +710,6 @@ aside {
 }
 
 @media screen and (min-width: 900px) {
-    .main-info {
-        width: 65%;
-    }
-
-    aside {
-        width: 25%;
-    }
 
     form .header-form {
         display: flex;
@@ -686,21 +725,39 @@ aside {
     .header-line .menu {
         width: 50%;
     }
-
-    .header-title .wrapper>div,
-    .footer-menu .wrapper>div {
-        display: flex;
-        flex-direction: unset;
-        justify-content: space-between;
-        width: 48%;
-    }
 }
 
 @media screen and (min-width: 1024px) {
+    .card-sale-price {
+        justify-content: space-between;
+    }
 
+    .card-sale-price a {
+        width: 20%;
+    }
+
+    .header-title .wrapper,
+    .footer-menu .wrapper {
+        justify-content: space-between;
+    }
     .header-title .wrapper>div,
-    .footer-menu .wrapper>div {
-        width: 45%;
+    .footer-menu .wrapper>div,
+    .footer-menu .wrapper>ul {
+        width: fit-content;
+    }
+
+    aside {
+        width: 25%;
+        margin: unset;
+    }
+
+    .flex {
+        width: 70%;
+    }
+
+    .main-wrapper {
+        display: flex;
+        justify-content: space-between;
     }
 
     .form .footer-form {
@@ -714,6 +771,12 @@ aside {
 @media screen and (min-width: 1100px) {
     .wrapper {
         max-width: 960px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card-sale-price a {
+        width: 23%;
     }
 }
 
@@ -737,7 +800,7 @@ table {
 }
 
 table tr {
-    box-shadow: inset 0px -1px 0px #cecedd;
+    border-bottom: 1px solid #cecedd;
 }
 
 table thead td {
@@ -756,20 +819,29 @@ table tbody tr {
     background-color: #e4e4ec;
 }
 
-table thead tr td:first-child {
-    border-radius: 3px 0 0 0;
+table {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    overflow: hidden;
+    border: none;
 }
 
-table thead tr td:last-child {
-    border-radius: 0 3px 0 0;
+table tbody tr:last-child {
+    border-bottom: none;
 }
 
-table tbody tr:last-child td:first-child {
-    border-radius: 0 0 3px 0;
+table tbody td {
+    font-size: 14rem;
+    line-height: 24rem;
+    color: #666;
+    font-family: "Arial";
 }
 
-table tbody tr:last-child td:last-child {
-    border-radius: 0 0 0 3px;
+table tbody tr:hover td {
+    color: #fff;
 }
 
 table tbody tr:hover {
@@ -804,17 +876,23 @@ table td {
     color: #24242b;
     font-weight: 700;
     font-family: "Roboto Slab";
+    margin-bottom: 20px;
 }
 
 .contacts-card p {
     font-size: 14rem;
     line-height: 21rem;
-    color: #666666;
+    color: #666;
     font-family: "Arial";
+    margin-bottom: 10px;
 }
 
 .contacts-card p span {
     display: block;
+}
+
+.contacts-card .contacts a {
+    margin-bottom: 10px;
 }
 
 .contacts a {
@@ -874,6 +952,13 @@ form {
     row-gap: 15px;
 }
 
+form input::placeholder,
+form textarea::placeholder {
+    font-style: italic;
+    font-family: "Arial";
+    color: #9999a6;
+}
+
 form input,
 form textarea {
     padding: 13px;
@@ -895,6 +980,11 @@ form textarea {
 
 .contact-info hr {
     margin-bottom: 40px;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #e4e4ec;
 }
 
 .footer-form {
@@ -926,6 +1016,10 @@ label[for="news"] {
     line-height: 21rem;
     color: #666;
     font-family: "Arial";
+}
+
+iframe {
+    border: none;
 }
 
 .form-news input[type="checkbox"] {
